@@ -17,7 +17,8 @@ import LandingPage from './components/LandingPage';
 import AuthSystem from './components/AuthSystem';
 import EdgeAI from './components/EdgeAI';
 import CitizenReport from './components/CitizenReport';
-import DriveModeButton from './components/DriveMode/DriveModeButton'; // ← NEW
+import DriveModeButton from './components/DriveMode/DriveModeButton';
+import InstallPrompt from './components/InstallPrompt';   // ← NEW
 import { HazardProvider, useHazards } from './context/HazardContext';
 import { SpendProvider, useSpend } from './context/SpendContext';
 
@@ -254,7 +255,6 @@ function AppShell() {
                 </button>
               )}
 
-              {/* ── DRIVE MODE BUTTON ── always visible in navbar ── */}
               <DriveModeButton hazards={hazards} />
 
             </nav>
@@ -409,6 +409,10 @@ function AppShell() {
         hazards={hazards} 
         contracts={contracts} 
       />
+
+      {/* PWA install prompt — Android native dialog + iOS manual instructions */}
+      <InstallPrompt />                                    {/* ← NEW */}
+
     </div>
   );
 }
