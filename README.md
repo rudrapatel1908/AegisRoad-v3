@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🛡️ AegisRoad v3.0
+# 🛡️ Safe Marg
 
 ### Next-Generation Civic Infrastructure Automation Platform
 
@@ -13,7 +13,7 @@
 [![YOLOv8](https://img.shields.io/badge/YOLOv8-Nano-00FFAB?style=flat-square)](https://ultralytics.com)
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 
-**AegisRoad automates how municipal governments detect road hazards, dispatch contractors with SLA deadlines, verify repairs with photo evidence, and anchor proof-of-repair immutably on blockchain — all in one command-and-control platform.**
+**Safe Marg automates how municipal governments detect road hazards, dispatch contractors with SLA deadlines, verify repairs with photo evidence, and anchor proof-of-repair immutably on blockchain — all in one command-and-control platform.**
 
 [🌐 Live Demo](https://aegis-road-v3.vercel.app) · [📡 API Docs](https://aegisroad-v3.onrender.com/docs) · [🔗 GitHub](https://github.com/rudrapatel1908/AegisRoad-v3)
 
@@ -42,9 +42,9 @@
 
 ## 🎯 What It Does
 
-AegisRoad is a full-stack civic-tech platform that solves three interconnected problems plaguing Indian municipal infrastructure:
+Safe Marg is a full-stack civic-tech platform that solves three interconnected problems plaguing Indian municipal infrastructure:
 
-| Problem | AegisRoad Solution |
+| Problem | Safe Marg Solution |
 |---------|-------------------|
 | Road defects go undetected for months | YOLOv8-Nano AI detects D00–D40 damage classes from dashcam images in real time |
 | Contractor accountability is opaque | SpendWatch algorithmic scoring + immutable blockchain audit trail |
