@@ -106,7 +106,7 @@ export default function LandingPage({
   ];
 
   const faqs = [
-    { q:'What defect classes does AegisRoad detect?', a:'YOLOv8-Nano classifies D00 Longitudinal Cracks, D10 Transverse Cracks, D20 Alligator Cracking, and D40 Potholes — all with SLA deadlines from 7 days down to 24 hours for critical potholes.' },
+    { q:'What defect classes does Safe Marg detect?', a:'YOLOv8-Nano classifies D00 Longitudinal Cracks, D10 Transverse Cracks, D20 Alligator Cracking, and D40 Potholes — all with SLA deadlines from 7 days down to 24 hours for critical potholes.' },
     { q:'How is contractor accountability enforced?', a:'SLA countdown timers start on assignment. Breaches trigger automatic escalation emails to the Municipal Commissioner and penalty deductions calculated against the contractor efficiency score.' },
     { q:'Is the Avalanche blockchain integration real?', a:'Yes — proof-of-repair photo hashes are anchored on Avalanche Fuji testnet. Each completed repair generates an immutable transaction ID viewable in the Contractor Portal.' },
     { q:'Can citizens report hazards without logging in?', a:'Absolutely. The public Report Issue page and the Landing Page form both accept hazard reports with zero authentication. Reports auto-pin to the live GIS map immediately.' },
@@ -128,11 +128,8 @@ export default function LandingPage({
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-14 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center" style={{ minHeight:'100vh', paddingTop:'80px', paddingBottom:'60px' }}>
           {/* Left */}
           <div className="flex flex-col justify-center">
-            <div className="w-[80px] h-[80px] rounded-full border-2 border-dashed flex items-center justify-center animate-spin-slow mb-6" style={{ borderColor:'rgba(7,46,36,0.3)', background:'rgba(200,212,0,0.15)' }}>
-              <div className="text-center animate-spin-reverse">
-                <span className="block text-lg" style={{ color:'#072E24' }}>→</span>
-                <span className="block text-[6px] font-black uppercase tracking-widest leading-tight" style={{ color:'#072E24', ...S }}>Civic AI</span>
-              </div>
+            <div className="mb-6" style={{ width:'120px', height:'120px' }}>
+              <img src="/landing.jpeg" alt="Safe Marg Logo" style={{ width:'120px', height:'120px', borderRadius:'50%', objectFit:'cover', display:'block' }} />
             </div>
             <p className="text-xs font-semibold mb-3 uppercase tracking-widest hidden" style={{ color:'rgba(7,46,36,0.55)' }}>YOLOv8 · Claude Sonnet 4 · Avalanche Blockchain</p>
             <h1 className="font-black uppercase leading-none mb-4" style={{ ...S, fontSize:'clamp(38px,6vw,76px)', color:'#072E24', letterSpacing:'-1px' }}>
@@ -159,7 +156,7 @@ export default function LandingPage({
                   <div className="absolute" style={{ left:'50%', top:'-36px', bottom:0, width:'6px', transform:'translateX(-50%)', background:'repeating-linear-gradient(to bottom,#C8D400 0,#C8D400 18px,transparent 18px,transparent 36px)', opacity:0.8, animation:'roadScrollLine 0.8s linear infinite' }} />
                 </div>
                 <div className="absolute inset-0 rounded-[28px]" style={{ background:'linear-gradient(135deg,rgba(7,46,36,0) 40%,rgba(7,46,36,0.65) 100%)' }} />
-                <div className="absolute top-6 left-7" style={{ ...S, fontSize:'12px', fontWeight:900, color:'rgba(200,212,0,0.7)', letterSpacing:'0.12em', textTransform:'uppercase' }}>AegisRoad v3.0 · Municipal AI</div>
+                <div className="absolute top-6 left-7" style={{ ...S, fontSize:'12px', fontWeight:900, color:'rgba(200,212,0,0.7)', letterSpacing:'0.12em', textTransform:'uppercase' }}>Safe Marg v3.0 · Municipal AI</div>
                 {[{top:'36%',left:'28%',d:'0s'},{top:'28%',left:'54%',d:'0.6s'},{top:'18%',left:'68%',d:'1.2s'}].map((p,i) => (
                   <div key={i} className="absolute" style={{ top:p.top, left:p.left, width:'14px', height:'14px' }}>
                     <div className="w-full h-full rounded-full animate-pulse" style={{ background:'#FF4444' }} />
@@ -167,7 +164,7 @@ export default function LandingPage({
                   </div>
                 ))}
                 <div className="absolute top-5 right-5 w-[64px] h-[64px] rounded-full border-2 flex items-center justify-center animate-spin-slow" style={{ borderColor:'rgba(200,212,0,0.4)' }}>
-                  <div className="text-center animate-spin-reverse" style={{ ...S, fontSize:'8px', fontWeight:700, color:'#C8D400', textTransform:'uppercase', letterSpacing:'0.1em', lineHeight:1.4 }}>AegisRoad<br/>v3.0<br/>↗</div>
+                  <div className="text-center animate-spin-reverse" style={{ ...S, fontSize:'8px', fontWeight:700, color:'#C8D400', textTransform:'uppercase', letterSpacing:'0.1em', lineHeight:1.4 }}>Safe Marg<br/>v3.0<br/>↗</div>
                 </div>
                 <div className="absolute top-[56px] right-7 flex flex-col gap-1">
                   {['#FF4444','#C8D400','#44FF88'].map((c,i) => (
@@ -202,7 +199,7 @@ export default function LandingPage({
             OUR COMMITMENT TO<br/><span style={{ color:'#C8D400' }}>ZERO HAZARDS</span><br/>ON EVERY ROAD
           </h2>
           <p className="text-sm leading-relaxed" style={{ color:'rgba(255,255,255,0.55)', maxWidth:'400px' }}>
-            AegisRoad automates how municipal governments detect road hazards, dispatch contractors with SLA deadlines, verify repairs with photo evidence, and anchor proof-of-repair immutably on blockchain.
+            Safe Marg automates how municipal governments detect road hazards, dispatch contractors with SLA deadlines, verify repairs with photo evidence, and anchor proof-of-repair immutably on blockchain.
           </p>
         </div>
         <div className="grid grid-cols-2 gap-[2px]">
@@ -222,7 +219,7 @@ export default function LandingPage({
 
       {/* ── MODULES ─────────────────────────────────────────── */}
       <section className="px-6 sm:px-10 lg:px-14 py-14" style={{ background:'#F4F0E6' }}>
-        <div className="section-eyebrow mb-1">AegisRoad's</div>
+        <div className="section-eyebrow mb-1">Safe Marg's</div>
         <div className="section-title mb-2">Platform Modules</div>
         <p className="section-sub mb-8 max-w-md">Six integrated modules form a complete civic infrastructure command platform.</p>
         <div className="flex flex-col gap-[2px]">
@@ -257,7 +254,7 @@ export default function LandingPage({
               A <span style={{ color:'#C8D400' }}>Personalized</span><br/>Civic Approach
             </h2>
             <p className="text-sm leading-relaxed mb-7" style={{ color:'rgba(255,255,255,0.5)' }}>
-              Every deployment is configured to your municipality's unique infrastructure. AegisRoad integrates AI detection, role-based dashboards, and immutable blockchain records — holding contractors accountable across India and BIMSTEC nations.
+              Every deployment is configured to your municipality's unique infrastructure. Safe Marg integrates AI detection, role-based dashboards, and immutable blockchain records — holding contractors accountable across India and BIMSTEC nations.
             </p>
             <button onClick={() => onNavigate('explorer')} className="btn-primary" style={{ padding:'12px 28px', fontSize:'14px' }}>Live Map →</button>
           </div>

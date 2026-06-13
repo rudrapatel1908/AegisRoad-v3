@@ -144,17 +144,16 @@ function AppShell() {
             onClick={() => handleNavClick('landing')}
             className="flex items-center gap-2 shrink-0 cursor-pointer"
           >
-            <div 
-              className="w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold"
-              style={{ background: '#072E24', color: '#C8D400' }}
-            >
-              🛡
-            </div>
+            <img
+              src="/icons/icon-128.png"
+              alt="Safe Marg logo"
+              className="w-8 h-8 rounded-lg object-cover"
+            />
             <span 
               className="text-[20px] font-black tracking-tight"
               style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#072E24', letterSpacing: '-0.5px' }}
             >
-              Aegis<span style={{ color: '#C8D400' }}>Road</span>
+              Safe <span style={{ color: '#C8D400' }}>Marg</span>
             </span>
           </button>
 
@@ -396,7 +395,7 @@ function AppShell() {
             className="text-2xl font-black"
             style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#C8D400' }}
           >
-            AegisRoad
+            Safe Marg
           </span>
           <div className="flex gap-6 text-sm" style={{ color: 'rgba(255,255,255,0.38)' }}>
             <button onClick={() => setActiveTab('landing')} className="hover:text-[#C8D400] transition-colors cursor-pointer">Overview</button>
@@ -404,7 +403,7 @@ function AppShell() {
             <button onClick={() => setActiveTab('citizen')} className="hover:text-[#C8D400] transition-colors cursor-pointer">Report</button>
           </div>
           <p className="text-xs" style={{ color: 'rgba(255,255,255,0.22)' }}>
-            © 2026 AegisRoad Intelligence Inc.
+            © 2026 Safe Marg Intelligence Inc.
           </p>
         </div>
       </footer>

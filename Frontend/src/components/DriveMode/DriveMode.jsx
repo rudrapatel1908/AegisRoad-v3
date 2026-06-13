@@ -253,7 +253,7 @@ function InstallBanner({ onDismiss }) {
       <div style={{ display:'flex', alignItems:'center', gap:12, marginBottom: showIOSHelp ? 12 : 0 }}>
         <div style={{ fontSize:24 }}>📱</div>
         <div>
-          <div style={{ fontSize:13, fontWeight:700, color:'#fff', marginBottom:2 }}>Add AegisRoad to Home Screen</div>
+          <div style={{ fontSize:13, fontWeight:700, color:'#fff', marginBottom:2 }}>Add Safe Marg to Home Screen</div>
           <div style={{ fontSize:11, color:'rgba(255,255,255,0.5)' }}>Get instant access, offline support & faster alerts</div>
         </div>
       </div>
@@ -278,7 +278,7 @@ async function searchPlaces(query) {
   if (!query || query.length < 3) return []
   const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(query)}&format=json&limit=7&addressdetails=1&countrycodes=in`
   try {
-    const r = await fetch(url, { headers: { 'Accept-Language': 'en', 'User-Agent': 'AegisRoad/3.0' } })
+    const r = await fetch(url, { headers: { 'Accept-Language': 'en', 'User-Agent': 'SafeMarg/3.0' } })
     if (!r.ok) throw new Error('Nominatim error')
     const d = await r.json()
     return d.map(p => ({
@@ -495,17 +495,17 @@ export default function DriveMode({ onClose }) {
         : null
       // Use a fixed test phrase for English; pick matching local test phrase
       const localTestPhrases = {
-        'hi-IN': 'एजिस रोड वॉयस अलर्ट अब सक्रिय हैं।',
-        'bn-BD': 'এজিস রোড ভয়েস অ্যালার্ট এখন সক্রিয়।',
-        'my-MM': 'AegisRoad voice alerts များ ဖွင့်ထားပြီ။',
-        'ne-NP': 'एजिस रोड भ्वाइस अलर्ट अब सक्रिय छ।',
-        'si-LK': 'AegisRoad හඬ ඇඟවීම් දැන් ක්‍රියාත්මකයි.',
-        'ta-IN': 'AegisRoad குரல் எச்சரிக்கைகள் இப்போது செயலில் உள்ளன.',
-        'th-TH': 'AegisRoad เปิดใช้งานการแจ้งเตือนด้วยเสียงแล้ว',
-        'dz-BT': 'AegisRoad སྐད་ཀྱི་ཞིབ་འཚོལ་སྦྱོར་བ་ཡོད།',
+        'hi-IN': 'सेफ मार्ग वॉयस अलर्ट अब सक्रिय हैं।',
+        'bn-BD': 'সেফ মার্গ ভয়েস অ্যালার্ট এখন সক্রিয়।',
+        'my-MM': 'Safe Marg voice alerts များ ဖွင့်ထားပြီ။',
+        'ne-NP': 'सेफ मार्ग भ्वाइस अलर्ट अब सक्रिय छ।',
+        'si-LK': 'Safe Marg හඬ ඇඟවීම් දැන් ක්‍රියාත්මකයි.',
+        'ta-IN': 'Safe Marg குரல் எச்சரிக்கைகள் இப்போது செயலில் உள்ளன.',
+        'th-TH': 'Safe Marg เปิดใช้งานการแจ้งเตือนด้วยเสียงแล้ว',
+        'dz-BT': 'Safe Marg སྐད་ཀྱི་ཞིབ་འཚོལ་སྦྱོར་བ་ཡོད།',
       }
       const testLocal = lang !== 'en-IN' ? (localTestPhrases[lang] ?? null) : null
-      await voice.speak('AegisRoad voice alerts are now active.', testLocal, lang)
+      await voice.speak('Safe Marg voice alerts are now active.', testLocal, lang)
       addLog(`✅ Voice working — EN + ${lang}`)
     } catch (e) {
       addLog('⚠️ Voice unavailable — beep alerts still active')
