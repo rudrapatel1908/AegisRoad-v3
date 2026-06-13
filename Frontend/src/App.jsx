@@ -151,7 +151,7 @@ function AppShell() {
               🛡
             </div>
             <span 
-              className="text-[22px] font-black tracking-tight hidden sm:block"
+              className="text-[20px] font-black tracking-tight"
               style={{ fontFamily: "'Barlow Condensed', sans-serif", color: '#072E24', letterSpacing: '-0.5px' }}
             >
               Aegis<span style={{ color: '#C8D400' }}>Road</span>
