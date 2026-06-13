@@ -103,21 +103,20 @@ function AppShell() {
   };
 
   const navItems = [
-    { id: 'landing', label: 'Overview', icon: <BookOpen size={13} />, roles: null },
-    { id: 'command', label: 'Command', icon: <LayoutDashboard size={13} />, roles: ['government'] },
-    { id: 'spend', label: 'SpendWatch', icon: <Coins size={13} />, roles: ['government'] },
-    { id: 'explorer', label: 'Hazard Map', icon: <Map size={13} />, roles: null },
-    { id: 'edgeai', label: 'Edge AI', icon: <Camera size={13} />, roles: null },
-    { id: 'citizen', label: 'Report', icon: <AlertTriangle size={13} />, roles: [null, 'government'] },
-    { id: 'driver', label: 'Driver HUD', icon: <Smartphone size={13} />, roles: ['worker'] },
-    { id: 'contractor', label: 'Contractor', icon: <Building size={13} />, roles: ['contractor'] },
-    { id: 'settings', label: 'Settings', icon: <Settings size={13} />, roles: null },
+    { id: 'landing',    label: 'Overview',    icon: <BookOpen size={13} />,      roles: null },
+    { id: 'command',    label: 'Command',      icon: <LayoutDashboard size={13} />,roles: ['government'] },
+    { id: 'spend',      label: 'SpendWatch',   icon: <Coins size={13} />,         roles: ['government'] },
+    { id: 'explorer',   label: 'Hazard Map',   icon: <Map size={13} />,           roles: null },
+    { id: 'edgeai',     label: 'Edge AI',      icon: <Camera size={13} />,        roles: null },
+    { id: 'citizen',    label: 'Report',       icon: <AlertTriangle size={13} />, roles: [null, 'government'] },
+    { id: 'driver',     label: 'Driver HUD',   icon: <Smartphone size={13} />,    roles: ['worker'] },
+    { id: 'contractor', label: 'Contractor',   icon: <Building size={13} />,      roles: ['contractor'] },
+    { id: 'settings',   label: 'Settings',     icon: <Settings size={13} />,      roles: null },
   ];
 
   const visibleNavItems = navItems.filter(item => {
     if (!item.roles) return true;
     if (item.roles.includes(null)) {
-      // accessible to guests and specific roles
       if (!currentUser) return true;
       if (item.roles.includes(currentUser?.role)) return true;
       return false;
@@ -179,8 +178,15 @@ function AppShell() {
             <DriveModeButton hazards={hazards} onNavigate={handleNavClick} />
           </nav>
 
-          {/* Auth + mobile menu */}
+          {/* Right side — always visible */}
           <div className="flex items-center gap-2 shrink-0">
+
+            {/* ── DRIVE MODE BUTTON — visible on mobile too ── */}
+            <div className="lg:hidden">
+              <DriveModeButton hazards={hazards} onNavigate={handleNavClick} />
+            </div>
+
+            {/* Auth — hidden on very small screens, shown sm+ */}
             {currentUser ? (
               <div className="hidden sm:flex items-center gap-2">
                 <div 
@@ -214,30 +220,33 @@ function AppShell() {
               </button>
             )}
 
-            {/* Mobile hamburger */}
+            {/* Hamburger — mobile only */}
             <button
               onClick={() => setMobileMenuOpen(p => !p)}
               className="lg:hidden p-2 rounded border transition-all cursor-pointer"
               style={{ borderColor: 'rgba(13,30,27,0.15)', color: '#072E24' }}
+              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
             >
               <div className="w-4 h-3 flex flex-col justify-between">
-                <span className={`block h-0.5 bg-current transition-all ${mobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
-                <span className={`block h-0.5 bg-current transition-all ${mobileMenuOpen ? 'opacity-0' : ''}`} />
-                <span className={`block h-0.5 bg-current transition-all ${mobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
+                <span className={`block h-0.5 bg-current transition-all duration-200 ${mobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
+                <span className={`block h-0.5 bg-current transition-all duration-200 ${mobileMenuOpen ? 'opacity-0' : ''}`} />
+                <span className={`block h-0.5 bg-current transition-all duration-200 ${mobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
               </div>
             </button>
           </div>
         </div>
 
-        {/* Mobile dropdown */}
+        {/* ── Mobile dropdown ── */}
         {mobileMenuOpen && (
           <div className="lg:hidden border-t border-black/5 bg-white">
             <div className="max-w-7xl mx-auto px-5 py-3 flex flex-col gap-1">
+
+              {/* Nav items */}
               {visibleNavItems.map(item => (
                 <button
                   key={item.id}
                   onClick={() => handleNavClick(item.id)}
-                  className={`flex items-center gap-2 px-3 py-2 rounded text-xs font-bold uppercase tracking-wider transition-all cursor-pointer text-left ${
+                  className={`flex items-center gap-2 px-3 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all cursor-pointer text-left ${
                     activeTab === item.id
                       ? 'text-[#072E24]'
                       : 'text-[#072E24]/60 hover:text-[#072E24] hover:bg-[#F4F0E6]'
@@ -248,18 +257,28 @@ function AppShell() {
                   {item.label}
                 </button>
               ))}
+
+              {/* Auth row in mobile menu */}
               <div className="pt-2 border-t border-black/5 mt-1">
                 {currentUser ? (
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-bold text-[#072E24]">{currentUser.username} · {currentUser.role}</span>
-                    <button onClick={handleLogout} className="text-xs text-red-600 font-bold flex items-center gap-1 cursor-pointer">
+                  <div className="flex items-center justify-between px-1 py-1">
+                    <div className="flex items-center gap-1.5">
+                      {currentUser.role === 'government' ? <ShieldCheck size={12} className="text-[#072E24]" /> : currentUser.role === 'contractor' ? <Building size={12} className="text-[#072E24]" /> : <Wrench size={12} className="text-[#072E24]" />}
+                      <span className="text-xs font-bold text-[#072E24]">
+                        {currentUser.username} · {currentUser.role}
+                      </span>
+                    </div>
+                    <button
+                      onClick={() => { handleLogout(); setMobileMenuOpen(false); }}
+                      className="text-xs text-red-600 font-bold flex items-center gap-1 cursor-pointer px-2 py-1 rounded hover:bg-red-50"
+                    >
                       <LogOut size={11} /> Logout
                     </button>
                   </div>
                 ) : (
                   <button
                     onClick={() => { setIsAuthOpen(true); setMobileMenuOpen(false); }}
-                    className="w-full py-2 rounded text-xs font-black uppercase tracking-wider text-center cursor-pointer"
+                    className="w-full py-2.5 rounded-lg text-xs font-black uppercase tracking-wider text-center cursor-pointer"
                     style={{ background: '#072E24', color: '#C8D400', fontFamily: "'Barlow Condensed', sans-serif" }}
                   >
                     Login / Sign Up
