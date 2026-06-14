@@ -1,13 +1,13 @@
 {
-  "name": "AegisRoad — Road Safety Platform",
-  "short_name": "AegisRoad",
+  "name": "Safe Marg — Road Safety Platform",
+  "short_name": "Safe Marg",
   "description": "AI-powered road hazard detection, contractor accountability and proof-of-repair on blockchain",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "background_color": "#072E24",
-  "theme_color": "#072E24",
+  "background_color": "#1f1f1f",
+  "theme_color": "#1f1f1f",
   "lang": "en",
   "categories": ["navigation", "utilities"],
   "icons": [
@@ -18,16 +18,34 @@
       "purpose": "any"
     },
     {
+      "src": "/icons/icon-72-maskable.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
       "src": "/icons/icon-96.png",
       "sizes": "96x96",
       "type": "image/png",
       "purpose": "any"
     },
     {
+      "src": "/icons/icon-96-maskable.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
       "src": "/icons/icon-128.png",
       "sizes": "128x128",
       "type": "image/png",
       "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-128-maskable.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "maskable"
     },
     {
       "src": "/icons/icon-192.png",

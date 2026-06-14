@@ -91,7 +91,7 @@ export default function AuthSystem({ isOpen, onClose, onLogin }) {
               <h3 className="text-lg font-black uppercase text-white" style={{ fontFamily:"'Barlow Condensed',sans-serif" }}>
                 {isRegister ? 'Register Identity' : 'Secure Sign In'}
               </h3>
-              <p className="text-[10px] font-mono" style={{ color:'rgba(255,255,255,0.5)' }}>AegisRoad Authentication Ledger</p>
+              <p className="text-[10px] font-mono" style={{ color:'rgba(255,255,255,0.5)' }}>Safe Marg Authentication Ledger</p>
             </div>
           </div>
           <button onClick={onClose} className="text-white/50 hover:text-white transition-colors cursor-pointer"><X size={18} /></button>

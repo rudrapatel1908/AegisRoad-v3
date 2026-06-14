@@ -28,7 +28,7 @@ const DEMO = {
 
 async function reverseGeocode(lat,lng) {
   try {
-    const r = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json`,{headers:{'Accept-Language':'en','User-Agent':'AegisRoad/1.0'}});
+    const r = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json`,{headers:{'Accept-Language':'en','User-Agent':'SafeMarg/1.0'}});
     const d = await r.json();
     return d.address?.road||d.address?.suburb||d.address?.city_district||d.address?.city||`${lat.toFixed(4)},${lng.toFixed(4)}`;
   } catch { return `${lat.toFixed(4)},${lng.toFixed(4)}`; }

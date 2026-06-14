@@ -126,7 +126,7 @@ function MapSearchBar({ onSelect }) {
     debounce.current = setTimeout(async () => {
       try {
         const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(v)}&format=json&limit=6&addressdetails=1&countrycodes=in`
-        const r = await fetch(url, { headers: { 'Accept-Language':'en', 'User-Agent':'AegisRoad/3.0' } })
+        const r = await fetch(url, { headers: { 'Accept-Language':'en', 'User-Agent':'SafeMarg/3.0' } })
         const d = await r.json()
         setSuggestions(d.map(p => ({
           label: [p.address?.city||p.address?.town||p.address?.village, p.address?.state].filter(Boolean).join(', ') || p.display_name.split(',')[0],

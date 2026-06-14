@@ -30,7 +30,7 @@ export default function InstallPrompt() {
             <Smartphone size={20} style={{ color:T.yellow }} />
           </div>
           <div className="flex-1 min-w-0">
-            <p className="text-xs font-black uppercase text-white" style={{ fontFamily:"'Barlow Condensed',sans-serif" }}>Install AegisRoad</p>
+            <p className="text-xs font-black uppercase text-white" style={{ fontFamily:"'Barlow Condensed',sans-serif" }}>Install Safe Marg</p>
             <p className="text-[10px] mt-0.5" style={{ color:'rgba(255,255,255,0.5)' }}>Add to home screen for offline access &amp; faster alerts</p>
           </div>
           <button
@@ -57,7 +57,7 @@ export default function InstallPrompt() {
               <div className="w-8 h-8 rounded-xl flex items-center justify-center" style={{ background:'rgba(200,212,0,0.15)' }}>
                 <Smartphone size={15} style={{ color:T.yellow }} />
               </div>
-              <p className="text-xs font-black uppercase text-white" style={{ fontFamily:"'Barlow Condensed',sans-serif" }}>Install AegisRoad</p>
+              <p className="text-xs font-black uppercase text-white" style={{ fontFamily:"'Barlow Condensed',sans-serif" }}>Install Safe Marg</p>
             </div>
             <button onClick={() => setIosDismissed(true)} className="cursor-pointer" style={{ color:'rgba(255,255,255,0.4)' }}>
               <X size={14} />
