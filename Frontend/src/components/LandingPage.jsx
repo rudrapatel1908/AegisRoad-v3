@@ -586,7 +586,7 @@ export default function LandingPage({
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
           {[
             { icon:<MapPin size={18}/>, label:'Office Address', val:'127/A, Church Road, Colombo' },
-            { icon:<Mail size={18}/>, label:'Email Assistance', val:'info@aegisroad.gov.in' },
+            { icon:<Mail size={18}/>, label:'Email Assistance', val:'info@safemarg.gov.in' },
             { icon:<Activity size={18}/>, label:'Platform Status', val:'All systems operational' },
           ].map((c,i) => (
             <div key={i} className="flex items-center gap-3 p-4 rounded-xl text-left" style={{ background:'#EAE5D6', border:'1px solid rgba(13,30,27,0.08)' }}>

@@ -131,7 +131,7 @@ export default function AuthSystem({ isOpen, onClose, onLogin }) {
             <div className="relative">
               <label className="block text-[9px] font-black uppercase tracking-wider mb-1.5" style={{ color:'rgba(13,30,27,0.45)', fontFamily:'monospace' }}>Official Email *</label>
               <Mail size={13} className="absolute left-3 bottom-[9px]" style={{ color:'rgba(13,30,27,0.35)' }} />
-              <input type="email" required placeholder="e.g. s.arjun@aegisroad.gov" value={formData.email} onChange={e=>setFormData({...formData,email:e.target.value})} style={inp} />
+              <input type="email" required placeholder="e.g. s.arjun@safemarg.gov" value={formData.email} onChange={e=>setFormData({...formData,email:e.target.value})} style={inp} />
             </div>
             {role === 'contractor' ? (
               <div>
